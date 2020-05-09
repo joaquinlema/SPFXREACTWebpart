@@ -8,7 +8,16 @@ import { IListItem } from './IListItem';
 import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
 
 export default class InitialWbpartSp extends React.Component<IInitialWbpartSpProps,ISpfxReactCrudState> {
-
+ 
+  constructor(props: IInitialWbpartSpProps, state: ISpfxReactCrudState) {  
+    super(props);  
+  
+    this.state = {  
+      status: 'Ready',  
+      items: []  
+    };  
+  }  
+  
   public render(): React.ReactElement<IInitialWbpartSpProps> {
 
     return (
