@@ -7,7 +7,7 @@ import { ISpfxReactCrudState } from './ISpfxReactCrudState';
 import { IListItem } from './IListItem';  
 import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
 
-export default class InitialWbpartSp extends React.Component<IInitialWbpartSpProps, {}> {
+export default class InitialWbpartSp extends React.Component<IInitialWbpartSpProps,ISpfxReactCrudState> {
 
   public render(): React.ReactElement<IInitialWbpartSpProps> {
 
