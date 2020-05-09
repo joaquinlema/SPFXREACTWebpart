@@ -21,7 +21,9 @@ export default class InitialWbpartSpWebPart extends BaseClientSideWebPart <IInit
     const element: React.ReactElement<IInitialWbpartSpProps> = React.createElement(
       InitialWbpartSp,
       {
-        description: this.properties.description
+        listName: "Projects",  
+        spHttpClient: this.context.spHttpClient,  
+        siteUrl: this.context.pageContext.web.absoluteUrl  
       }
     );
 
