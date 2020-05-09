@@ -21,7 +21,8 @@ export default class PeoplePickerWpWebPart extends BaseClientSideWebPart <IPeopl
     const element: React.ReactElement<IPeoplePickerWpProps> = React.createElement(
       PeoplePickerWp,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        context: this.context
       }
     );
 

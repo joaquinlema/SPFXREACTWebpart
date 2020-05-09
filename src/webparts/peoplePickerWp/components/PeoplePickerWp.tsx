@@ -2,6 +2,7 @@ import * as React from 'react';
 import styles from './PeoplePickerWp.module.scss';
 import { IPeoplePickerWpProps } from './IPeoplePickerWpProps';
 import { escape } from '@microsoft/sp-lodash-subset';
+import { PeoplePicker, PrincipalType } from "@pnp/spfx-controls-react/lib/PeoplePicker";  
 
 export default class PeoplePickerWp extends React.Component<IPeoplePickerWpProps, {}> {
   public render(): React.ReactElement<IPeoplePickerWpProps> {
