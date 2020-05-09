@@ -13,14 +13,30 @@ export default class PeoplePickerWp extends React.Component<IPeoplePickerWpProps
             <div className={ styles.column }>
               <span className={ styles.title }>Welcome to SharePoint!</span>
               <p className={ styles.subTitle }>Customize SharePoint experiences using Web Parts.</p>
-              <p className={ styles.description }>{escape(this.props.description)}</p>
-              <a href="https://aka.ms/spfx" className={ styles.button }>
-                <span className={ styles.label }>Learn more</span>
-              </a>
+              
+              <PeoplePicker    
+                context={this.props.context}    
+                titleText="People Picker"    
+                personSelectionLimit={3}    
+                groupName={""} // Leave this blank in case you want to filter from all users    
+                showtooltip={true}    
+                isRequired={true}    
+                disabled={false}    
+                ensureUser={true}    
+                selectedItems={this._getPeoplePickerItems}    
+                showHiddenInUI={false}    
+                principalTypes={[PrincipalType.User]}    
+                resolveDelay={1000} 
+                />  
+              
             </div>
           </div>
         </div>
       </div>
     );
   }
+  
+  private _getPeoplePickerItems(items: any[]) {  
+    console.log('Items:', items);  
+  }  
 }
