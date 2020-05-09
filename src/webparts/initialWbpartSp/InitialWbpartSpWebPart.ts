@@ -12,7 +12,7 @@ import InitialWbpartSp from './components/InitialWbpartSp';
 import { IInitialWbpartSpProps } from './components/IInitialWbpartSpProps';
 
 export interface IInitialWbpartSpWebPartProps {
-  description: string;
+  listName: string;
 }
 
 export default class InitialWbpartSpWebPart extends BaseClientSideWebPart <IInitialWbpartSpWebPartProps> {
@@ -21,7 +21,7 @@ export default class InitialWbpartSpWebPart extends BaseClientSideWebPart <IInit
     const element: React.ReactElement<IInitialWbpartSpProps> = React.createElement(
       InitialWbpartSp,
       {
-        listName: "Projects",  
+        listName: this.properties.listName,  
         spHttpClient: this.context.spHttpClient,  
         siteUrl: this.context.pageContext.web.absoluteUrl  
       }
@@ -49,8 +49,8 @@ export default class InitialWbpartSpWebPart extends BaseClientSideWebPart <IInit
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
+                PropertyPaneTextField('listName', {
+                  label: strings.ListNameFieldLabel
                 })
               ]
             }

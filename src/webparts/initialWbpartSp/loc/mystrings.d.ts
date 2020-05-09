@@ -1,7 +1,7 @@
 declare interface IInitialWbpartSpWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
-  DescriptionFieldLabel: string;
+  ListNameFieldLabel: string;
 }
 
 declare module 'InitialWbpartSpWebPartStrings' {

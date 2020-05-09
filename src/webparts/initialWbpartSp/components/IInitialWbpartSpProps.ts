@@ -4,5 +4,4 @@ export interface IInitialWbpartSpProps {
   listName: string;  
   spHttpClient: SPHttpClient;  
   siteUrl: string;
-
 }
