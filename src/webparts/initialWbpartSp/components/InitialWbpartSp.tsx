@@ -84,5 +84,30 @@ export default class InitialWbpartSp extends React.Component<IInitialWbpartSpPro
   
   private deleteItem(): void {  
   }  
-  
+
+  private getLatestItemId(): Promise<number> {  
+    return new Promise<number>((resolve: (itemId: number) => void, reject: (error: any) => void): void => {  
+      this.props.spHttpClient.get(`${this.props.siteUrl}/_api/web/lists/getbytitle('${this.props.listName}')/items?$orderby=Id desc&$top=1&$select=id`,  
+        SPHttpClient.configurations.v1,  
+        {  
+          headers: {  
+            'Accept': 'application/json;odata=nometadata',  
+            'odata-version': ''  
+          }  
+        })  
+        .then((response: SPHttpClientResponse): Promise<{ value: { Id: number }[] }> => {  
+          return response.json();  
+        }, (error: any): void => {  
+          reject(error);  
+        })  
+        .then((response: { value: { Id: number }[] }): void => {  
+          if (response.value.length === 0) {  
+            resolve(-1);  
+          }  
+          else {  
+            resolve(response.value[0].Id);  
+          }  
+        });  
+    });  
+  }   
 }
