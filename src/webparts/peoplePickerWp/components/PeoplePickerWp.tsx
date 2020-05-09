@@ -2,13 +2,12 @@ import * as React from 'react';
 import styles from './PeoplePickerWp.module.scss';
 import { IPeoplePickerWpProps } from './IPeoplePickerWpProps';
 import { IPnPPeoplePickerState } from './PnPPeoplePickerState';
-
 import { escape } from '@microsoft/sp-lodash-subset';
 // @pnp/sp imports      
 import { sp } from '@pnp/sp';  
-
 import { PeoplePicker, PrincipalType } from "@pnp/spfx-controls-react/lib/PeoplePicker";  
-
+import { IButtonProps, DefaultButton } from 'office-ui-fabric-react/lib/Button';   
+import { autobind } from 'office-ui-fabric-react';  
 export default class PeoplePickerWp extends React.Component<IPeoplePickerWpProps, {}> {
   constructor(props: IPeoplePickerWpProps, state: IPnPPeoplePickerState) {    
     super(props);    
