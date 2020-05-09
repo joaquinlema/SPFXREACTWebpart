@@ -9,10 +9,19 @@
           "manifest": "./src/webparts/initialWbpartSp/InitialWbpartSpWebPart.manifest.json"
         }
       ]
+    },
+    "people-picker-wp-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/peoplePickerWp/PeoplePickerWpWebPart.js",
+          "manifest": "./src/webparts/peoplePickerWp/PeoplePickerWpWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "InitialWbpartSpWebPartStrings": "lib/webparts/initialWbpartSp/loc/{locale}.js"
+    "InitialWbpartSpWebPartStrings": "lib/webparts/initialWbpartSp/loc/{locale}.js",
+    "PeoplePickerWpWebPartStrings": "lib/webparts/peoplePickerWp/loc/{locale}.js"
   }
 }

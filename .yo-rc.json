@@ -5,7 +5,7 @@
     "libraryId": "e4705c04-b34a-44fe-aeca-d3b273cc2d05",
     "environment": "spo",
     "packageManager": "npm",
-    "isCreatingSolution": true,
+    "isCreatingSolution": false,
     "isDomainIsolated": true,
     "componentType": "webpart"
   }
