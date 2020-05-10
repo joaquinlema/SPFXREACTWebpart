@@ -84,7 +84,7 @@ export default class PnpcruDoperations extends React.Component<IPnpcruDoperation
   read = () => {
     this.setState({label:"cargando", loading: true});
 
-    sp.web.lists.getByTitle("Projects").items.getById(1).get().then((item: any) => {
+    sp.web.lists.getByTitle("Projects").items.getById(2).get().then((item: any) => {
       this.setState({label: item.Title, loading: false});
     })
   }
@@ -93,7 +93,7 @@ export default class PnpcruDoperations extends React.Component<IPnpcruDoperation
     this.setState({label:"cargando", loading: true});
 
     let list = sp.web.lists.getByTitle("Projects");
-    list.items.getById(1).update({
+    list.items.getById(2).update({
         Title: "My New Title - SPFx",
         Technology: "Updated - SharePoint"
     }).then((i) => {
@@ -103,9 +103,9 @@ export default class PnpcruDoperations extends React.Component<IPnpcruDoperation
 
   deleteItem = () =>{  
     this.setState({label:"Eliminando item", loading: true});
-    
+
     let list = sp.web.lists.getByTitle("Projects");
-    list.items.getById(1).delete()
+    list.items.getById(2).delete()
       .then(_ => {this.setState({label:'Eliminado', loading: false});});  
   }
 
