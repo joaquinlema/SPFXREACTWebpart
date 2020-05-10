@@ -17,12 +17,21 @@
           "manifest": "./src/webparts/peoplePickerWp/PeoplePickerWpWebPart.manifest.json"
         }
       ]
+    },
+    "pnpcru-doperations-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/pnpcruDoperations/PnpcruDoperationsWebPart.js",
+          "manifest": "./src/webparts/pnpcruDoperations/PnpcruDoperationsWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "InitialWbpartSpWebPartStrings": "lib/webparts/initialWbpartSp/loc/{locale}.js",
     "PeoplePickerWpWebPartStrings": "lib/webparts/peoplePickerWp/loc/{locale}.js",
-    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js",
+    "PnpcruDoperationsWebPartStrings": "lib/webparts/pnpcruDoperations/loc/{locale}.js"
   }
 }
