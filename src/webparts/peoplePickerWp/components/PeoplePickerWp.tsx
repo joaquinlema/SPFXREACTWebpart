@@ -3,12 +3,21 @@ import styles from './PeoplePickerWp.module.scss';
 import { IPeoplePickerWpProps } from './IPeoplePickerWpProps';
 import { IPnPPeoplePickerState } from './PnPPeoplePickerState';
 import { escape } from '@microsoft/sp-lodash-subset';
-// @pnp/sp imports      
-import { sp } from '@pnp/sp';  
 import { PeoplePicker, PrincipalType } from "@pnp/spfx-controls-react/lib/PeoplePicker";  
-import { IButtonProps, DefaultButton } from 'office-ui-fabric-react/lib/Button';   
-import { autobind } from 'office-ui-fabric-react';  
-export default class PeoplePickerWp extends React.Component<IPeoplePickerWpProps, {}> {
+// @pnp/sp imports    
+	
+import { sp } from "@pnp/sp";
+import "@pnp/sp/webs";
+import "@pnp/sp/lists";
+import "@pnp/sp/items";
+import { getGUID } from "@pnp/common";  
+  
+// Import button component      
+import { DefaultButton } from 'office-ui-fabric-react/lib/Button';   
+import { autobind } from 'office-ui-fabric-react';   
+
+export default class PeoplePickerWp extends React.Component<IPeoplePickerWpProps, IPnPPeoplePickerState> {
+  
   constructor(props: IPeoplePickerWpProps, state: IPnPPeoplePickerState) {    
     super(props);    
     
@@ -35,12 +44,17 @@ export default class PeoplePickerWp extends React.Component<IPeoplePickerWpProps
                 isRequired={true}    
                 disabled={false}    
                 ensureUser={true}    
-                selectedItems={this._getPeoplePickerItems}    
+                selectedItems={this._getPeople}    
                 showHiddenInUI={false}    
                 principalTypes={[PrincipalType.User]}    
                 resolveDelay={1000} 
                 />  
-              
+              <DefaultButton    
+                data-automation-id="addSelectedUsers"    
+                title="Add Selected Users"    
+                onClick={this.addSelectedUsers}>    
+                Add Selected Users    
+              </DefaultButton>    
             </div>
           </div>
         </div>
@@ -48,7 +62,22 @@ export default class PeoplePickerWp extends React.Component<IPeoplePickerWpProps
     );
   }
   
-  private _getPeoplePickerItems(items: any[]) {  
-    console.log('Items:', items);  
-  }  
+  _getPeople = (items: any[]) => {
+    const idUser = items.map(elem => elem.id);
+
+    this.setState({addUsers:idUser}); 
+  }
+
+  @autobind   
+  private addSelectedUsers(): void {    
+
+    sp.web.lists.getByTitle("SPFxUsers").items.add({  
+      Title: getGUID(),  
+      UsersId: {   
+          results: this.state.addUsers 
+      }  
+    }).then(i => {  
+        console.log(i);  
+    });  
+  }   
 }
