@@ -23,7 +23,7 @@ export default class InitialWbpartSpWebPart extends BaseClientSideWebPart <IInit
       {
         listName: this.properties.listName,  
         spHttpClient: this.context.spHttpClient,  
-        siteUrl: this.context.pageContext.web.absoluteUrl + '/teams/Techint'
+        siteUrl: this.context.pageContext.web.absoluteUrl
       }
     );
 

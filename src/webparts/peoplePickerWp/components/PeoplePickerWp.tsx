@@ -36,6 +36,7 @@ export default class PeoplePickerWp extends React.Component<IPeoplePickerWpProps
     super(props);    
     
     this.state = {    
+      numeros:0,
       addUsers: [],
       gridItems: [{
         thumbnail: "https://pixabay.com/get/57e9dd474952a414f1dc8460825668204022dfe05555754d742e7bd6/hot-air-balloons-1984308_640.jpg",
