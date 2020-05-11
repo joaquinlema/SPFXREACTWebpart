@@ -72,7 +72,7 @@ export default class PnpcruDoperations extends React.Component<IPnpcruDoperation
   create = () => {
     this.setState({label:"cargando", loading: true});
     console.log('solo para probar merge');
-    console.log('solo para probar mergedev');
+    console.log('solo para probar mergedevgit a');
 
     sp.web.lists.getByTitle("Projects").items.add({
       Title: "PnPJS",
