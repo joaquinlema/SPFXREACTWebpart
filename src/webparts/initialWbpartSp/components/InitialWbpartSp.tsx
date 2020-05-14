@@ -4,7 +4,7 @@ import { IInitialWbpartSpProps } from './IInitialWbpartSpProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 
 import { ISpfxReactCrudState } from './ISpfxReactCrudState'; 
-import { IListItem } from './IListItem';  
+import { IListItem, ListItemSp } from './IListItem';  
 import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
 
 export default class InitialWbpartSp extends React.Component<IInitialWbpartSpProps,ISpfxReactCrudState> {
@@ -14,7 +14,8 @@ export default class InitialWbpartSp extends React.Component<IInitialWbpartSpPro
   
     this.state = {  
       status: 'Ready',  
-      items: []  
+      items: [],
+      listado: [new ListItemSp("hola",1)]
     };  
   }  
 

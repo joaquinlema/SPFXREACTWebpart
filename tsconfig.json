@@ -29,7 +29,7 @@
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts", "src/webparts/pnpcruDoperations/components/context/sharepoint/sharepointReducer.tsx", "src/webparts/pnpcruDoperations/components/context/sharepoint/SharepointState.tsx", "src/webparts/pnpcruDoperations/components/context/sharepoint/sharepointContext.tsx"
   ],
   "exclude": [
     "node_modules",
