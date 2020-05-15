@@ -7,42 +7,44 @@ import {
 } from '../types/types';
 
 // recibimos el initial state de la app y las action representan lo que pasamos por parametro en el dispatch
-export default (state,action) => {
+export default (state, action) => {
     // ...state lo que hace es hacer una copia exacta del state de la app para no modificar la original
     // y poder cambiarle los valores que queremos
-    switch(action.type){
+    switch (action.type) {
         case READ_USER:
-            return{
+            return {
                 ...state,
                 loading: false,
-                label: action.payload
+                label: action.payload,
+                titulo: 'Spfx read'
             }
         case CREATE_USER:
-            return{
+            return {
                 ...state,
                 loading: false,
-                label: 'item created'
+                label: 'item created',
+                titulo: 'Spfx create'
             }
         case DELETE_USER:
-            return{
+            return {
                 ...state,
                 loading: false,
                 label: 'item deleted'
             }
         case UPDATE_USERS:
-            return{
+            return {
                 ...state,
                 loading: false,
                 label: 'Item Updated'
             }
         case SET_LOADING:
-            return{
+            return {
                 ...state,
-                loading : true,
-                label:'...Cargando'
+                loading: true,
+                label: '...Cargando'
             }
 
-        default :
-        return state;
+        default:
+            return state;
     }
 }

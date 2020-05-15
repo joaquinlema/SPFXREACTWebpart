@@ -6,11 +6,8 @@ import { sp } from "@pnp/sp";
 import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
-
 import SharepointContext from './sharepointContext';
 import SharepointReducer from './sharepointReducer';
-
-
 import {
     READ_USER,
     SET_LOADING,
@@ -20,10 +17,10 @@ import {
 } from '../types/types';
 
 const SharepointState = (props: any) => {
-    //global state para todo lo relacionado con github y su sestado
     const initialState = {
         label: '',
-        loading: false
+        loading: false,
+        titulo: 'spfx'
     }
 
     // aca manejamos el ida y vuelta de los servicios o las acciones que llevemos a cabo
@@ -94,6 +91,7 @@ const SharepointState = (props: any) => {
         value = {{
             label: state.label,
             loading: state.loading,
+            titulo: state.titulo,
             create,
             read,
             updateItem,
