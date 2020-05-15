@@ -7,8 +7,9 @@ import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
 
+import SharepointContext from './sharepointContext';
 import SharepointReducer from './sharepointReducer';
-import SharepointContext from './sharepointContext'
+
 
 import {
     READ_USER,
