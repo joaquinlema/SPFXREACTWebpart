@@ -25,6 +25,14 @@
           "manifest": "./src/webparts/pnpcruDoperations/PnpcruDoperationsWebPart.manifest.json"
         }
       ]
+    },
+    "react-routing-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reactRouting/ReactRoutingWebPart.js",
+          "manifest": "./src/webparts/reactRouting/ReactRoutingWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
@@ -32,6 +40,7 @@
     "InitialWbpartSpWebPartStrings": "lib/webparts/initialWbpartSp/loc/{locale}.js",
     "PeoplePickerWpWebPartStrings": "lib/webparts/peoplePickerWp/loc/{locale}.js",
     "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js",
-    "PnpcruDoperationsWebPartStrings": "lib/webparts/pnpcruDoperations/loc/{locale}.js"
+    "PnpcruDoperationsWebPartStrings": "lib/webparts/pnpcruDoperations/loc/{locale}.js",
+    "ReactRoutingWebPartStrings": "lib/webparts/reactRouting/loc/{locale}.js"
   }
 }

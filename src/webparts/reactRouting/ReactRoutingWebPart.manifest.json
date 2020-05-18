@@ -1,0 +1,24 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "7590dd92-ccc2-4fdd-9d3b-de9c8dcdd51b",
+  "alias": "ReactRoutingWebPart",
+  "componentType": "WebPart",
+
+  "version": "*",
+  "manifestVersion": 2,
+
+
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart"],
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+    "group": { "default": "Other" },
+    "title": { "default": "React-Routing" },
+    "description": { "default": "prueba de ruteo con react en spfx" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "React-Routing"
+    }
+  }]
+}
