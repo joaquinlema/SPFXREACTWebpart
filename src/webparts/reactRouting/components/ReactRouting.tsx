@@ -4,6 +4,7 @@ import { BrowserRouter as Router, HashRouter, Switch, Route } from 'react-router
 import NavBarOfficeUi from './navBar/NavBarOfficeUi';
 import formularioAuto from './pages/FormularioAuto';
 import About from './pages/About';
+import ListaDeEspera from './listas/ListaDeEspera';
 import { Fragment } from 'react';
 import { Stack, StackItem } from 'office-ui-fabric-react';
 
@@ -23,6 +24,8 @@ const ReactRouting = () => {
 
             <Route path='/formularioAuto' component={formularioAuto} />
             <Route path='/about' component={About} />
+            <Route path='/listaDeEspera' component={ListaDeEspera} />
+
           </Switch>
         </StackItem>
       </Stack>

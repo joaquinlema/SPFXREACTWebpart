@@ -17,28 +17,22 @@ const navLinkGroups: INavLinkGroup[] = [
       {
         name: 'Home',
         url: '#/',
-        expandAriaLabel: 'Expand Home section',
-        collapseAriaLabel: 'Collapse Home section',
-        links: [
-          {
-            name: 'Reservas',
-            url: '#/',
-            key: 'key1',
-          },
-          {
-            name: 'Lista de Espera',
-            url: '#/',
-            disabled: true,
-            key: 'key2',
-          },
-        ],
-        isExpanded: true,
+        key:'key0'
+      },
+      {
+        name: 'Reservas',
+        url: '#/',
+        key: 'key1',
+      },
+      {
+        name: 'Lista de Espera',
+        url: '#/listaDeEspera',
+        key: 'key2',
       },
       {
         name: 'Alta Auto',
         url: '#/formularioAuto',
         key: 'key3',
-        isExpanded: true,
       },
       {
         name: 'About',
@@ -53,7 +47,7 @@ const NavBarOfficeUi: React.FunctionComponent = () => {
   return (
     <Nav
       onLinkClick={_onLinkClick}
-      selectedKey="key3"
+      selectedKey="key2"
       ariaLabel="Nav basic example"
       styles={navStyles}
       groups={navLinkGroups}
