@@ -11,6 +11,7 @@ import { Stack, StackItem } from 'office-ui-fabric-react';
 
 const ReactRouting = () => {
   return (
+    <div className={ styles.container }>
     <HashRouter>
       <Stack horizontal gap={15}>
         <NavBarOfficeUi /> 
@@ -30,6 +31,7 @@ const ReactRouting = () => {
         </StackItem>
       </Stack>
     </HashRouter>
+    </div>
   );
 }
 
